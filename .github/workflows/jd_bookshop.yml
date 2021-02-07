@@ -5,6 +5,8 @@ name: 口袋书店
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '1 8,12,18 * * *'
   watch:
     types: started
   repository_dispatch:
