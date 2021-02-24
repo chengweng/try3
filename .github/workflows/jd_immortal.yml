@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 女装盲盒抽京豆
+name: 京东神仙书院
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '0 0 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: nzmh
+    types: immortal
 jobs:
   build:
 
@@ -28,15 +28,17 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【女装盲盒抽京豆】'
+      - name: '运行 【京东神仙书院】'
         run: |
           cd ~/scripts
-          node jd_nzmh.js
+          node jd_immortal.js
         env:
-          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
+          JDSXSY_SHARECODES: ${{ secrets.JDSXSY_SHARECODES }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+          MARKET_COIN_TO_BEANS: ${{ secrets.MARKET_COIN_TO_BEANS }}
+          MARKET_REWARD_NOTIFY: ${{ secrets.MARKET_REWARD_NOTIFY }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
