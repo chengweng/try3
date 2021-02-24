@@ -27,7 +27,8 @@ jobs:
       - name: npm install
         run: |
           cd ~/scripts
-          npm install京东小魔方】'
+          npm install
+      - name: '运行 【京东小魔方】'
         run: |
           cd ~/scripts
           node jd_xmf.js
