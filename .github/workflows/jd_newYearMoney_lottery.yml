@@ -1,16 +1,14 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 京东极速版红包
+name: 京东压岁钱抢百元卡
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 9,12,16,20 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: redpacket
+    types: newYearMoney_lottery
 jobs:
   build:
 
@@ -28,10 +26,10 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【京东极速版红包】'
+      - name: '运行 【京东压岁钱抢百元卡】'
         run: |
           cd ~/scripts
-          node js_redpacket.js
+          node jd_newYearMoney_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
