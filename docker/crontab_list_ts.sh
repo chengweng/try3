@@ -4,14 +4,7 @@
 # 每3天的23:50分清理一次日志
 50 23 */3 * * rm -rf /scripts/logs/*.log
 
-
-##############短期活动##############
-# 京喜故事(2020.12.12活动过期)
-10 * * * * node /scripts/jd_jxstory.js |ts >> /scripts/logs/jd_jxstory.log 2>&1
-
-
 ##############长期活动##############
-
 # 签到
 0 0,12,18 * * * cd /scripts && node jd_bean_sign.js |ts >> /scripts/logs/jd_bean_sign.log 2>&1
 # 京小超兑换奖品
