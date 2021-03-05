@@ -540,7 +540,7 @@ function jdfactory_getProductList(flag = false) {
                 $.canMakeList.sort(sortCouponCount);
                 console.log(`商品名称       可选状态    剩余量`)
                 for (let item of $.canMakeList) {
-                  console.log(`${item.name.slice(-4)}         ${item.sellOut === 1 ? '已抢光':'可 选'}      ${item.couponCount}`);
+                  console.log(`${item.name}         ${item.sellOut === 1 ? '已抢光':'可 选'}      ${item.couponCount}`);
                 }
                 if (!flag) {
                   for (let item of $.canMakeList) {
