@@ -1,6 +1,6 @@
 /*
- * @Author: lxk0301 https://github.com/lxk0301 
- * @Date: 2020-11-12 11:42:12 
+ * @Author: lxk0301 https://github.com/lxk0301
+ * @Date: 2020-11-12 11:42:12
  * @Last Modified by: lxk0301
  * @Last Modified time: 2021-1-4 14:27:20
  */
@@ -100,8 +100,8 @@ const JD_API_HOST = 'https://lkyl.dianpusoft.cn/api';
         console.log(`\n${$.UserName} 去给自己的下一账号 ${decodeURIComponent($.newShareCodes[(i + 1) % $.newShareCodes.length]['cookie'].match(/pt_pin=(.+?);/) && $.newShareCodes[(i + 1) % $.newShareCodes.length]['cookie'].match(/pt_pin=(.+?);/)[1])}助力，助力码为 ${code}\n`)
         await createAssistUser(code, $.createAssistUserID);
       }
-      console.log(`\n去帮助作者:lxk0301\n`)
-      await helpFriends();
+      // console.log(`\n去帮助作者:lxk0301\n`)
+      // await helpFriends();
     }
   }
 })()
@@ -148,15 +148,15 @@ async function doChannelsListTask(taskId, taskType) {
     }
   }
 }
-async function helpFriends() {
-  await updateInviteCode();
-  if (!$.inviteCodes) await updateInviteCodeCDN();
-  if (!$.inviteCodes) await updateInviteCodeCDN('https://raw.githubusercontent.com/l499477004/updateTeam/raw/master/jd_updateSmallHomeInviteCode.json');
-  for (let item of $.inviteCodes.inviteCode) {
-    if (!item) continue
-    await createAssistUser(item, $.createAssistUserID);
-  }
-}
+// async function helpFriends() {
+//   await updateInviteCode();
+//   if (!$.inviteCodes) await updateInviteCodeCDN();
+//   if (!$.inviteCodes) await updateInviteCodeCDN('https://raw.githubusercontent.com/l499477004/updateTeam/raw/master/jd_updateSmallHomeInviteCode.json');
+//   for (let item of $.inviteCodes.inviteCode) {
+//     if (!item) continue
+//     await createAssistUser(item, $.createAssistUserID);
+//   }
+// }
 async function doAllTask() {
   await queryAllTaskInfo();//获取任务详情列表$.taskList
   console.log(` 任务名称   完成进度 `)
