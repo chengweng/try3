@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 新年压岁钱
+name: 沃尔玛粉丝互动
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '3 2 17-28 * *'
   watch:
     types: started
   repository_dispatch:
-    types: newYearMoney
+    types: walmart
 jobs:
   build:
 
@@ -28,11 +28,13 @@ jobs:
         run: |
           cd ~/scripts
           npm install
-      - name: '运行 【新年压岁钱】'
+      - name: '运行 【百沃尔玛粉丝互动】'
         run: |
           cd ~/scripts
-          node jd_newYearMoney.js
+          node jd_walmart.js
         env:
+          FRUIT_NOTIFY_CONTROL: ${{ secrets.FRUIT_NOTIFY_CONTROL }}
+          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
