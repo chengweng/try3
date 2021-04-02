@@ -1604,7 +1604,7 @@ function getUrlData(url, name) {
 }
 /**
  * 模拟生成 fingerprint
- * @returns {string}
+ * @returns {string}2
  */
 function generateFp() {
   let e = "0123456789";
