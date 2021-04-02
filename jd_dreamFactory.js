@@ -43,7 +43,7 @@ let tuanActiveId = `6S9y4sJUfA2vPQP6TLdVIQ==`;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '', allMessage = '';
 const inviteCodes = [
-  '2HVCZsb25UVOsaRlBI9oZA==@-y6KmUw--5AWvPub4XPEqg==@V5LkjP4WRyjeCKR9VRwcRX0bBuTz7MEK0-E99EJ7u0k=@0WtCMPNq7jekehT6d3AbFw==@lr8htKoGsb61gQVxb0vj_Q=='
+  'lr8htKoGsb61gQVxb0vj_Q==@2HVCZsb25UVOsaRlBI9oZA==@-y6KmUw--5AWvPub4XPEqg==@V5LkjP4WRyjeCKR9VRwcRX0bBuTz7MEK0-E99EJ7u0k=@0WtCMPNq7jekehT6d3AbFw=='
 ];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 $.tuanIds = [];
@@ -1532,11 +1532,7 @@ async function requestAlgo() {
               let enCryptMethodJDString = data.data.result.algo;
               if (enCryptMethodJDString) $.enCryptMethodJD = new Function(`return ${enCryptMethodJDString}`)();
               console.log(`获取签名参数成功！`)
-              console.log(`fp: ${$.fingerprint}`)
-              console.log(`token: ${$.token}`)
-              console.log(`enCryptMethodJD: ${enCryptMethodJDString}`)
             } else {
-              console.log(`fp: ${$.fingerprint}`)
               console.log('request_algo 签名参数API请求失败:')
             }
           } else {
@@ -1604,7 +1600,7 @@ function getUrlData(url, name) {
 }
 /**
  * 模拟生成 fingerprint
- * @returns {string}2
+ * @returns {string}
  */
 function generateFp() {
   let e = "0123456789";
